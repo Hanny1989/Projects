@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
  
  
- // Slideshow
+
     let slideIndex = 0;
     const slides = document.querySelectorAll(".slide");
     const dots = document.querySelectorAll(".dot");
@@ -61,18 +61,18 @@ document.addEventListener("DOMContentLoaded", () => {
     prev.addEventListener("click", prevSlide);
     next.addEventListener("click", nextSlide);
 
-    // Auto play
+    
     setInterval(() => {
       slideIndex++;
       showSlides(slideIndex);
     }, 5000);
 
-    // Initial
+    
     showSlides(slideIndex);
 
  
    
-        // Auswahl speichern und Banner schließen
+      
     function savePreferences() {
       let necessary = true;
       let analytics = document.getElementById("analytics").checked;
@@ -85,13 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
       applyCookieSettings(settings);
     }
 
-    // Einstellungen anwenden
+   
     function applyCookieSettings(settings) {
       let prefs = JSON.parse(settings);
 
       if (prefs.analytics) {
         console.log("Analytics aktiviert");
-        // Beispiel: Google Analytics könnte hier geladen werden
+      
       }
 
       if (prefs.marketing) {
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function loadMarketingScripts() {
       // Beispiel: Google Ads Conversion Tracking
       let gads = document.createElement("script");
-      gads.src = "https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXX"; // <-- deine ID eintragen
+      gads.src = "https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXX"; // Id placeholder
       gads.async = true;
       document.head.appendChild(gads);
 
@@ -112,10 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'AW-XXXXXXX'); // <-- deine ID eintragen
+        gtag('config', 'AW-XXXXXXX'); // ID marker
       };
 
-      // Beispiel: Facebook Pixel
+      
       let fb = document.createElement("script");
       fb.innerHTML = `
         !function(f,b,e,v,n,t,s)
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.head.appendChild(fb);
     }
 
-    // Banner immer anzeigen
+    
     window.onload = function() {
       document.getElementById("cookie-banner").style.display = "block";
     }
