@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<script>
+    let Todo = ['Einkaufen' , 'Putzen' , 'Kochen' , 'Spazieren' ] ; 
+
+    function showTodo() {
+        document.getElementById('myList').innerHTML ='' ;
+
+        for (let i = 0; i < Todo.length; i++) {  
+        document.getElementById('myList').innerHTML += `<li>${Todo[i]}<a href="#" onclick="deleteTodo(${i})">X</a></li> ` ; //to do wird über dem i als Array genommen 
+        }
+}
+
+    function addTodo() {
+        let Todo = document.getElementById('myinput').value;
+        if (Todo) {
+             Todo.push(Todo);
+        showTodo();
+        document.getElementById('myinput').value ='';
+    }}
+
+
+function deleteTodo(position){
+    Todo.splice(position, 1);
+    showTodo();
+}
+</script>
+<body onload ="showTodo()">
+    <ul id="myList">
+       
+    </ul>
+
+    <input id="myinput" placeholder="Do ya ting" type="text">
+    <button onclick="addTodo()">Hinzufügen</button>
+  
+    
+
+</body>
+</html>

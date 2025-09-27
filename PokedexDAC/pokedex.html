@@ -1,0 +1,101 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./scripts/pokedex.js"></script>
+    <script type="module" src="./scripts/templates.js"></script>
+    <link rel="stylesheet" href="./styles/pokedexMain.css" />
+    <link rel="stylesheet" href="./styles//bannerStyle.css" />
+    <link rel="stylesheet" href="./styles//bg-types.css" />
+    <title>Pokedex</title>
+    <link rel="shortcut icon" href="./Assets/Favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <header class="pokedexHeader">
+      <div class="header">
+        <img
+          class="logo"
+          src="./Assets/40-408344_pokemon-logo-black-transparent-pokemon-logo-png-clipart.png.png"
+          alt=""
+        />
+        <input type="text" id="searchInput" placeholder="Search Pokémon..." />
+      </div>
+    </header>
+
+    <div id="overlay" class="overlay hidden">
+      <div id="bigCardContainer" class="bigCardContainer"></div>
+    </div>
+
+    <div class="dexContent" id="dexContent"></div>
+
+    <div class="btn">
+      <button id="loadPokemon" class="pokeball-button" aria-label="Load More">
+        <svg
+          class="pokeball"
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M50,50 m-45,0 a45,45 0 1,1 90,0" fill="red" />
+          <path d="M5,50 a45,45 0 0,0 90,0" fill="white" />
+          <circle
+            cx="50"
+            cy="50"
+            r="12"
+            fill="white"
+            stroke="black"
+            stroke-width="4"
+          />
+          <circle cx="50" cy="50" r="6" fill="black" />
+          <text
+            x="50%"
+            y="25%"
+            text-anchor="middle"
+            fill="white"
+            dy=".3em"
+            font-size="13"
+            font-family="Galindo, sans-serif"
+          >
+            Load
+          </text>
+          <text
+            x="50%"
+            y="75%"
+            text-anchor="middle"
+            fill="red"
+            dy=".3em"
+            font-size="13"
+            font-family="Galindo, sans-serif"
+          >
+            More
+          </text>
+        </svg>
+      </button>
+    </div>
+
+    <footer></footer>
+
+    <div id="loaderOverlay" class="loader-overlay hidden">
+      <div class="loader-box">
+        <img src="" alt="" />
+        <svg
+          class="pokeball rotate"
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M50,50 m-45,0 a45,45 0 1,1 90,0" fill="red" />
+          <path d="M5,50 a45,45 0 0,0 90,0" fill="white" />
+          <circle
+            cx="50"
+            cy="50"
+            r="12"
+            fill="white"
+            stroke="black"
+            stroke-width="4"
+          />
+          <circle cx="50" cy="50" r="6" fill="black" />
+        </svg>
+        <p>Loading...</p>
+      </div>
+    </div>
+  </body>
+</html>

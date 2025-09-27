@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+    function greet() {
+
+        let abc = 'Hanny';                       //let name Hanny wird abgerufen und ausgeführt
+        let age = 35;                             //let age wird ausgeführt 
+        console.log('Hello' , + abc);            // in der console tauchen diese beiden befehle erstmalig auf, ohne auf der Seite sichtbar zu sein 
+
+        saygoodBye(abc) ;                // in der Cosnole werden sayGoddbye Befehle ausgeführt von allen drei Optionen 
+        saygoodBye(age);
+        saygoodBye('Hans')
+    }// variablen sind in der der function gültig in der sie deklariert sind 
+
+    function saygoodBye(name){
+        console.log ('Bye, bye' + name)
+    }
+
+    greet(); 
+</script>
+<body>
+    <button onclick="greet()">Hello</button>
+    
+</body>
+</html>

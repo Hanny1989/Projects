@@ -1,0 +1,141 @@
+/*media*/
+@media screen and(min-width: 769px) {
+     /* Main Recipe Section */
+     .MainRecipeDirection {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        grid-template-columns: 1fr; /* Eine Spalte */
+      }
+      .SaladMainPage {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+      .txtStyleMainRecipe {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        font-size: 16px;
+        text-align: center;
+        margin: 10px 0;
+      }
+      .recipeBtn {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: 80%;
+        font-size: 12px;
+        margin-bottom: 20px;
+      }
+    
+      /* Salate-Flip-Cards Section */
+      .diretionSalads {
+        position: relative;
+        top: 0;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+      .flip-card {
+        margin: 0 auto;
+      }
+    }
+    
+
+@media screen and (max-width: 768px) {
+    /* Header & Navigation */
+    .head {
+      flex-direction: column;
+      justify-content: center;
+      padding: 10px;
+    }
+    .topLogo {
+      height: 80px;
+    }
+    .btn {
+      width: 120px;
+      height: 40px;
+      font-size: 16px;
+    }
+    .dropdown-menu {
+      top: 50px;
+      width: 120px;
+    }
+  
+    /* Main Recipe Section */
+    .MainRecipeDirection {
+      position: relative;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      grid-template-columns: 1fr; /* Eine Spalte */
+    }
+    .SaladMainPage {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+    .txtStyleMainRecipe {
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      font-size: 16px;
+      text-align: center;
+      margin: 10px 0;
+    }
+    .recipeBtn {
+      position: relative;
+      left: 0;
+      top: 0;
+      width: 80%;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+  
+    /* Salate-Flip-Cards Section */
+    .diretionSalads {
+      position: relative;
+      top: 0;
+      left: 0;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .flip-card {
+      margin: 0 auto;
+    }
+  }
+  
+  /* Optional: weitere Media Queries (z. B. für sehr kleine Geräte) */
+  @media screen and (max-width: 480px) {
+    .btn {
+      width: 100px;
+      height: 35px;
+      font-size: 14px;
+    }
+    .dropdown-menu {
+      width: 100px;
+    }
+    .topLogo {
+      height: 60px;
+    }
+    .recipeBtn {
+      font-size: 16px;
+    }
+    .txtStyleMainRecipe {
+      font-size: 14px;
+    }
+  }
+
+  /*Footer media*/

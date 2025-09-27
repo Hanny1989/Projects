@@ -1,0 +1,177 @@
+.atf{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px black;
+    background-image: linear-gradient( rgb(255, 0, 166) , rgb(166, 110, 6), rgb(6, 229, 6));
+    display:flex;
+    justify-content: center;
+}
+
+.h1{
+    font-size:72px;
+    
+}
+.h1:nth-of-type(h1)  {
+    animation-duration: 6s;
+    animation-delay: -2s;
+  }
+
+  @keyframes {
+    { transform : translateX()}
+  }
+
+
+
+.containerBackground {
+    scroll-behavior: smooth;
+    height: 100vh; 
+    width: 100vw;  
+    position: absolute;
+    inset: 0;               
+    /*background: linear-gradient(120deg, #000, #222);*/
+    overflow: hidden;  
+}     
+
+.cardContainer {
+    position: absolute;
+    top: 40%; 
+    left: 5%; 
+    right: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.card {
+    position: relative;
+    width: 164px;
+    height: 256px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.card:hover {
+    transform: translateY(-20px);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ffbc00, #ff0058);
+    border-radius: 1.2em;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ffbc00, #ff0058);
+    filter: blur(30px);
+}
+
+.card span {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    border-radius: 1em;
+}
+
+.card .content {
+    position: relative;
+    padding: 10px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pic {
+    object-fit: cover;
+    width: 100%;
+    height: 237px;
+    border-radius: 1em;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    max-width: 80%;
+    max-height: 80%;
+    border: 5px solid #fff;
+    border-radius: 10px;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+}
+
+.prev { left: 35px; }
+.next { right: 35px; }
+
+/*erste Version von den Hover Cards
+
+/*@media (max-width: 768px) {
+    .popup-content {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    .arrow {
+        font-size: 30px;
+    }
+
+    .close {
+        font-size: 30px;
+    }
+}
+
+
+
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 20px solid #3498db;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+*/

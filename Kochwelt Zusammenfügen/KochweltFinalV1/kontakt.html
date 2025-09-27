@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/kontakt.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="icon" type="image/png" href="./img/favicon.png" />
+    <script src="./js/contact_form.js"></script>
+    <title>Kontakt</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="logo">
+            <a href="./index.html"><img src="./img/logo.png" alt="Kochwelt Logo"></a></div>
+        
+            <nav class="nav-links">
+            <a class="nav-link" href="./index.html">Start</a>
+            <a class="nav-link" href="./rdt.html">Rezept des Tages</a>
+            <a class="nav-link" href="./kontakt.html">Kontakt</a>
+            <a class="nav-link" href="./impressum.html">Impressum</a>
+        </nav>
+        
+        <div id="burger-menu-icon" onclick="toggleBurgerMenu()">☰</div>
+        
+        <div id="burger-nav" class="burger-nav-container">
+          <nav class="burger-nav">
+              <a class="burger-nav-link" href="./index.html">Startseite</a>
+              <a class="burger-nav-link" href="./rdt.html">Rezept des Tages</a>
+              <a class="burger-nav-link" href="./kontakt.html">Kontakt</a>
+              <a class="burger-nav-link" href="./impressum.html">Impressum</a>
+          </nav>
+      </div>
+    
+              
+    
+    </header>
+      <section class="container_contact">
+        <!--Kontaktformular Überschrift-->
+        <div class="contact_header">
+          <h3>Haben Sie fragen? Schreiben Sie uns gerne eine Nachtricht!</h3>
+        </div>
+        <div style="height: 65vh;">
+          <!--Kontaktformular Eingabefelder in Kombination mit Formtree. Beim Absenden wird die Funktion "sendMail(event)" ausgeführt.
+          Die dazugehörige JS-Datei ist die contact_form.js in Kombination mit der Seite zur Weiterleitung der send_mail.html-->
+          <form onsubmit="sendMail(event)">
+            <label>
+              Vorname<br />
+              <input type="contact_firstname" name="Vorname" /> </label
+            ><br />
+            <label>
+              Nachname<br />
+              <input type="contact_lastname" name="Nachname" /> </label
+            ><br />
+            <label>
+              E-Mail-Adresse<br />
+              <input type="contact_email" name="E-Mail-Adresse" /> </label
+            ><br />
+            <label
+              >Deine Nachricht<br /><textarea
+                name="Nachricht"
+              ></textarea></label
+            ><br />
+            <button type="submit">Absenden</button>
+          </form>
+        </div>
+      </section>
+      <footer>
+        &copy; 2025 Kochwelt. Alle Rechte vorbehalten. |
+        <a href="./datenschutz.html">Datenschutz</a>
+      </footer>
+    </div>
+    <script src="./js/burgerMenu.js"></script>
+  </body>
+</html>

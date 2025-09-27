@@ -1,0 +1,22 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.impressumFinal{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height:75vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding-top:24px;
+
+}
+
+.ref{
+    -webkit-text-fill-color: black;
+}
+
+.txt{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="einkauf.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einkaufsliste</title>
+</head>
+<body>
+    <div class="headArea">
+        <h1 clas="Headline">Einkaufsliste!</h1>
+    </div>
+<div id="groceries" class="list">
+
+    <input id="toDoField" type="text">
+    <button onclick="addToDo()" class="button" id="add">Hinzufügen</button>
+    <button id="clear" onclick="clearList()">Löschen</button>
+
+
+    <ul id="unsorted">
+        <li>
+        <button checkbox></button>
+        </li>
+    </ul>
+</div>
+
+<script src="einkauf.js">
+    function addToDo() {
+        unsorted.innerHTML += '<li>' + toDoField.value + '</li>';
+        toDoField.value = '';
+    }
+
+    function clearList() {
+        unsorted.innerHTML += '<li>' - unsorted.value -' </li>'
+        
+    }
+</script>
+    
+</body>
+</html>

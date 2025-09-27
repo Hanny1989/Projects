@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <style>
+        #chat {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 300px;
+            height: 200px;
+            overflow-y: scroll;
+            margin-bottom: 10px;
+        }
+        .message {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="chat">Unbekannt:</div>
+    <input id="message" type="text" placeholder="Your message...">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        function sendMessage() {
+            let messageInput = document.getElementById('message');
+            let messageText = messageInput.value; // Get the value from the input element
+            
+            if (messageText.trim() !== "") { // Trim the text after getting the value
+                let chatBox = document.getElementById('chat');
+                let newMessage = document.createElement('div');
+                newMessage.className = 'message';
+                newMessage.innerText = messageText;
+                chatBox.appendChild(newMessage);
+                messageInput.value = ""; // Clear the input field
+                chatBox.scrollTop = chatBox.scrollHeight; // Scroll to the bottom of the chat box
+            }
+        }
+        
+        // Example of adding an event listener to call sendMessage when Enter is pressed
+        document.getElementById('message').addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>

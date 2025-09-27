@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dein Lieferdienst</title>
+  <link rel="icon" href="./Favicon/android-chrome-192x192.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="scriptWarenkorb.js"></script>
+</head>
+<body class="restaurant-page" onload="initializePage()">
+  <!-- Header mit großem Bild und Logo -->
+  <header class="site-header">
+    <div class="hero">
+      <img src="./FillImgs/italian-style-pizza.webp" alt="Restaurant Hero" class="hero-image">
+      <img class="headLogo2" src="./Logo/Bestell App- Logo.svg" alt="Logo">
+    </div>
+    <div class="restaurant-info">
+      <h1>Dein Lieferdienst</h1>
+      <p>4.7 ★★★★✮ | Frisch. Lecker. Schnell.</p>
+      <p>Lieferkosten: 2,00 € | Mindestbestellwert: 10,00 €</p>
+    </div>
+  </header>
+
+  <!-- Kategorie-Navigation (wird per JS befüllt) -->
+  <nav class="category-nav"></nav>
+
+  <!-- Layout mit Content links und Warenkorb rechts -->
+  <div class="page">
+    <main class="product-wrapper" id="product-wrapper"></main>
+
+    <!-- Warenkorb Sticky rechts -->
+    <aside class="cart-wrapper" id="cart">
+      <h2>Warenkorb</h2>
+      <div id="cart-items"></div>
+      <div class="cart-summary">
+        <div>Zwischensumme: <span id="subtotal">0,00 €</span></div>
+        <div>Lieferkosten: <span>2,00 €</span></div>
+        <div><strong>Gesamt: <span id="total-price">0,00 €</span></strong></div>
+      </div>
+      <button onclick="checkout()" class="btn">Bestellen</button>
+    </aside>
+  </div>
+
+  <!-- Responsive Warenkorb Button -->
+  <button class="cart-toggle-btn">Warenkorb (€<span id="mobile-total">0,00</span>)</button>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Dein Lieferdienst</p>
+    <p><a href="#">Impressum</a> | <a href="#">Datenschutz</a></p>
+  </footer>
+
+  <!-- Templates + JS Laden -->
+  <script src="templates.js"></script>
+</body>
+</html>

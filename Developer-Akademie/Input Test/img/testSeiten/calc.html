@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function calc() {
+        let number = +document.getElementById('numbers').value;    //+ wandelt text in zahlen um 
+        let resultText = `The Result of${number} is ${PowerOf2(number)}`;
+        
+
+        alert(getResultText(number, PowerOf2(number)));   //klammern am besten immer von innen nach außen lesen.
+    }
+
+    function PowerOf2(x){                     //hoch 2 zahlen als return funktion 
+          return x*x;
+    }
+
+
+    function getResultText (number, result){   // variablen  gelten nur für die eine function 
+
+        return ` The result of ${number}² is ${result}` ;
+}
+
+
+
+</script>
+<body>
+   
+    <input type="number" id="numbers"> <button onclick="calc()">Rechner</button>
+    
+</body>
+</html>

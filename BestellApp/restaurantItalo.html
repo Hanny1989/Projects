@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Italiano Pizzeria</title>
+  <link rel="icon" href="./Favicon/android-chrome-192x192.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="scriptWarenkorb.js"></script>
+  <script defer src="templates.js"></script>
+</head>
+<body class="restaurant-page" onload="initializePage()">
+  <header class="site-header">
+    <div class="hero">
+      <img src="./FillImgs/italian-style-pizza.webp" alt="Italiano" class="hero-image">
+      <img class="headLogo2" src="./Logo/Bestell App- Logo.svg" alt="Logo">
+    </div>
+    <div class="restaurant-info">
+      <h1>Italiano Pizzeria</h1>
+      <p>Pizza, Pasta • 4.7 ★★★★✮ • 30–45 Min</p>
+    </div>
+  </header>
+
+  <nav class="category-nav"></nav>
+
+  <div class="page">
+    <main class="product-wrapper" id="product-wrapper"></main>
+    <aside class="cart-wrapper" id="cart">
+      <h2>Warenkorb</h2>
+      <div id="cart-items"></div>
+      <div class="cart-summary">
+        <div>Zwischensumme: <span id="subtotal">0,00 €</span></div>
+        <div>Lieferkosten: <span>2,00 €</span></div>
+        <div><strong>Gesamt: <span id="total-price">0,00 €</span></strong></div>
+      </div>
+      <button onclick="checkout()" class="btn">Bestellen</button>
+    </aside>
+  </div>
+
+  <button class="cart-toggle-btn">Warenkorb (€<span id="mobile-total">0,00</span>)</button>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Dein Lieferdienst</p>
+    <p><a href="indexMain.html">Zurück zur Übersicht</a></p>
+  </footer>
+</body>
+</html>

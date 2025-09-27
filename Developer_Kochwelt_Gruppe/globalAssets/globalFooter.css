@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+  }
+  
+  
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: black;
+    height: 128px;
+    width: 100%;
+    padding-right: 296px;
+    gap: 24px;
+  }
+  
+ 
+  .footerImpressum {
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+  }
+  
+ 
+  .footerImpressum:hover {
+    cursor: pointer;
+    color: #f70303;
+  
+    box-shadow: 0 0 20px 0 #f70303;
+  }
+  
+ 
+  .footerIcons {
+    display: flex;
+    gap: 30px;
+  }
+  
+  
+  .icons {
+    height: 32px;
+    width: 32px;
+    transition: filter 0.3s, box-shadow 0.3s;
+  }
+  
+ 
+  .icons:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+    box-shadow: 0 0 20px 0 #f70303;
+  }
+  

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table td,
+        table th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        table tr:hover {
+            background-color: #ddd;
+        }
+
+        table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+
+</style>
+<script>
+    function add(zutat , anzahl){
+        document.getElementById('table').innerHTML += `  
+    <tr>
+        <td>${zutat}</td>
+        <td>${anzahl}</td>
+    </tr>`;
+    }
+    function addNew() {
+        let Zutatenliste = document.getElementById('zutat1').value;
+        let Mengenliste = document.getelementById('anzahl1').value ;
+        add(Zutatenliste , Mengenliste)
+
+        document.getElementById('zutat1').value=``;
+        document.getElementById('anzahl1').value=``;
+    }
+
+
+</script>
+<body>
+<input id="zutat" placeholder="Zutat" type="text">
+<input id="anzahl" placeholder="Anzahl" type="text"><button onclick="add()">Hinzufügen</button>
+<table id="table">
+    <tr>
+        <td></td>
+        <td</td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td></td>
+    </tr>
+    
+</table>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+// Replaced by shared templates and styles

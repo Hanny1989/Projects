@@ -1,0 +1,43 @@
+
+
+.aot {
+    display:flex;
+    justify-content:center;
+    background-image: url(./portCity.jpg);
+    height:100vh;
+    background-size:cover;
+    margin:0px;
+
+}
+.headline{
+    font-size:48px;
+    display: flex;
+    justify-content: center;
+}
+
+.diaPics {
+    width : 100%;
+    height:100%;
+    aspect-ratio: 3;
+    
+}
+
+.search{
+    height:42px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 550px;
+}
+
+.holidaySection {
+    display:flex;
+
+
+}
+
+.holidayText {
+    background-color:rgb(17,73,114);
+    font-size:19px;
+    font-weight:bold; 
+}

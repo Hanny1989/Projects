@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .atf {
+    background: url(./img/herobg.jpg) center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+  }
+
+  .head1 h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  .head1 .h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .navBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    flex-wrap: wrap;
+  }
+
+  .navBar a,
+  .navBar button {
+    margin: 0.5rem;
+    text-decoration: none;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .sakura {
+    height: 48px;
+  }
+
+  .containerHto{
+    display:flex;
+    justify-content:center;
+  }
+
+  .htoSection{   
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:center;
+    gap: 2rem;
+    padding: 2rem;
+
+  }
+  .htoSection img{
+    height:60%;
+    width:50%;
+
+  }
+
+  .menu1,
+  .menu3,
+  .menu1 img,
+  .menu3 img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 50%;
+    height: auto;
+
+  }
+  .menu2, 
+  .menu2 img{
+    max-width: 50%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .nbe,
+  .tabHead {
+    text-align: center;
+  }
+
+  .om,
+  .FU {
+    
+    text-align: center;
+    color: #9F0908;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .containerMenu{
+    background-image: url(./img/section_our_menu_bg.jpg);
+    padding: 2rem;
+  }
+
+  .menuHead {
+  
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+  }
+  .containerLocation {
+    padding:2rem;
+  }
+
+  .adress {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .marker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .google {
+    width: 100%;
+    height: 360px;
+    border: none;
+  }
+
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0A141E;
+    padding: 1rem 2rem;
+    color: white;
+  }
+
+  .botSakuraLogo{
+    width:35%;
+    height:50%;
+  }
+
+  .logosBottom img {
+    height: 32px;
+    margin: 0 0.5rem;
+  }
+
+  .flag1,
+  .flag2 {
+    width: 32px;
+    height: 32px;
+    margin: 0 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .navBar {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .head1 h1 {
+      font-size: 2rem;
+    }
+
+    .head1 .h2 {
+      font-size: 1.2rem;
+    }
+
+    .om,
+    .FU {
+      font-size: 2rem;
+    }
+
+    .menuHead {
+      font-size: 1.5rem;
+    }
+
+    .tabHead {
+      font-size: 1rem;
+    }
+  }

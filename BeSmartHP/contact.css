@@ -1,0 +1,132 @@
+/*
+.contactForm{
+    height:250px;
+    width:auto;
+    position:absolute;
+    top:45%;
+    left:45%;
+
+}
+
+.contactContainer{
+    gap:10px;
+    display:flex;
+    flex-direction: column;
+    font-size:1.2rem;
+    font-weight:700
+}
+
+
+.h2{
+    position:absolute;
+    top:75%;
+    font-size:1.2rem;
+    
+}
+
+button {
+    border-radius:30px;
+    border: none;
+    display: block;
+    position: sticky;
+    right: 11%;
+    top: 95%;
+    padding: 0.7em 2.4em;
+    font-size: 18px;
+    background: transparent linear-gradient(red , blue);
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    color: royalblue;
+    z-index: 1;
+    font-family: inherit;
+    font-weight: 500;
+  }
+  
+  button span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 4px solid royalblue;
+  }
+  
+  button span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8%;
+    height: 500%;
+    background: var(--lightgray);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    transition: all 0.3s;
+  }
+  
+  button:hover span::before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    background: royalblue;
+  }
+  
+  button:hover {
+    color: white;
+  }
+  
+  button:active span::before {
+    background: #2751cd;
+  }
+    */
+
+
+            /* Fixierte Überschrift */
+            .h2 {
+                position: fixed;
+                top: 70%;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 1.2rem;
+                background-color: transparent;
+                padding: 10px;
+                z-index: 1000;
+            }
+    
+            /* Container Styling */
+            .contactForm {
+                height: 250px;
+                width: auto;
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+            }
+    
+            /* Textarea mit fester Größe */
+            textarea {
+                width: 300px;
+                height: 150px;
+                resize: none; /* Deaktiviert die manuelle Größenänderung */
+                font-size: 1rem;
+                padding: 10px;
+            }
+    
+            /* Fixierter Button unten */
+            .button {
+                position: fixed;
+                bottom: 10px;
+                right: 10px;
+                padding: 10px 20px;
+                border-radius: 30px;
+                border: none;
+                background: transparent;
+                color: white;
+                font-size: 18px;
+                cursor: pointer;
+                font-weight: bold;
+                z-index: 1000;
+            }

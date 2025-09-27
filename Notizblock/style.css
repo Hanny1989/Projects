@@ -1,0 +1,15 @@
+*{
+    margin : 0px;
+    display: flex;
+    align-items:center; 
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+h1{
+    padding-top:3%;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+}

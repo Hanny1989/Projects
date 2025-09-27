@@ -1,0 +1,125 @@
+.bg-fire {
+  background-image: url("../Assets/Pokedexkarten_Feuer.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-ground {
+  background: url("../Assets/Pokedexkarten_Boden.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-dragon {
+  background: url("../Assets/Pokedexkarten_Drache.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-ice {
+  background-image: url("../Assets/Pokedexkarten_EIs.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-electric {
+  background: url("../Assets/Pokedexkarten_Elektro.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-fairy {
+  background: url("../Assets/Pokedexkarten_Fee.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-flying {
+  background: url("../Assets/Pokedexkarten_Flug.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-ghost {
+  background: url("../Assets/Pokedexkarten_Geist.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-bug {
+  background: url("../Assets/Pokedexkarten_Bug.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-fighting {
+  background: url("../Assets/Pokedexkarten_Kampf.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-grass {
+  background: url("../Assets/Pokedexkarten_pflanze.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-psychic {
+  background: url("../Assets/Pokedexkarten_Psycho.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-dark {
+  background: url("../Assets/Pokedexkarten_Unlicht.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-water {
+  background: url("../Assets/Pokedexkarten_Wasser.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-poison {
+  background: url("../Assets/Pokedexkarten_Unlicht.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-normal {
+  background: url("../Assets/Pokedexkarte_Normal.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-rock {
+  background: url("../Assets/Pokedexkarten_Gestein.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}
+
+.bg-steel {
+  background: url("../Assets/Pokedexkarten_Gestein.png");
+   background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+}

@@ -1,0 +1,160 @@
+.container_rdt {
+  display: flex;
+  flex-direction: column;
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-bottom: 50px;
+}
+
+.container_rezept {
+  border-bottom: 2px solid #ddd;
+}
+
+.rezept_img_header img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Schneidet das Bild passend zu */
+  object-position: center; /* Zentriert das Bild */
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.rezept_img_icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 30px;
+  flex-wrap: wrap; /* Ermöglicht Umbruch der Bilder */
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+.rezept_img_icons img {
+  height: 16px;
+}
+
+.icon {
+  background-color: rgb(226, 225, 225);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+
+#portions {
+  width: 100px;
+  font-size: 14px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px 0px 0px 10px;
+  border: 0.5px solid rgb(226, 225, 225);
+}
+
+#portions_button {
+  width: 150px;
+  background-color: #008000;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  border: none;
+}
+
+.ingredients {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.ingredietns_grey {
+  background-color: rgb(226, 225, 225);
+  padding-left: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 10px;
+}
+.ingredietns_white {
+  padding-left: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 10px;
+}
+
+span {
+  font-weight: 400;
+  text-align: justify;
+}
+
+.from_who_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#preperation_icons {
+    margin-bottom: 25px;
+}
+
+#from_who {
+  padding-left: 25px;
+  font-size: 16px;
+}
+
+#from_who_pic img {
+  width: 96px; 
+  height: 96px;
+  border-radius: 50%; 
+  object-fit: cover; 
+}
+
+@media screen and (max-width: 768px) {
+  .ingredietns_grey {
+    width: 90%;
+    margin: 0 auto; 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ingredietns_grey {
+    width: 100%;
+    padding-left: 15px; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .container_rdt {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .rezept_img_header img {
+    height: 150px; 
+  }
+
+  .rezept_img_icons {
+    gap: 15px; 
+  }
+
+  #portions {
+    width: 80px; 
+  }
+
+  #portions_button {
+    width: 120px; 
+  }
+
+  #from_who {
+    font-size: 14px;
+    padding-left: 10px;
+  }
+
+  #from_who_pic img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
