@@ -45,7 +45,7 @@
 
 #burgerMenu {
   position: absolute;
-  top: 100%; /* direkt unter dem Header */
+  top: 100%; 
   left: 0;
   right: 0;
   background: white;
@@ -54,12 +54,12 @@
   align-items: center;
   overflow: hidden;
   
-  max-height: 0;               /* Start geschlossen */
-  transition: max-height 0.4s ease; /* weiches Slide-Down */
+  max-height: 0;              
+  transition: max-height 0.4s ease; /
 }
 
 #burgerMenu.show {
-  max-height: 300px; /* genug Platz für Links */
+  max-height: 300px; 
 }
 
 
@@ -92,7 +92,7 @@
       margin: 0.5rem 0;
     }
 
-        /* Logo Animation */
+        
     .logo {
       
       height: 150px;
@@ -173,8 +173,7 @@
       background-color: #333;
     }
 
-    /*Cookie*/
-        /* Banner-Styling */
+   
     #cookie-banner {
       position: fixed;
       bottom: 0;
