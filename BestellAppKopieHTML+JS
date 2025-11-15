@@ -9,6 +9,655 @@
   <link rel="icon" type="image/png" href="./Favicon/favicon-32x32.png" id="favicon-placeholder"/>
 
 </head>
+
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: #f6f7fb;
+      color: #222;
+      line-height: 1.4;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+ 
+
+    .site-header {
+      background: #ff8000;
+      color: #fff;
+      padding: 0.75rem 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #ff8000;
+      font-weight: 800;
+      font-size: 0.9rem;
+    }
+
+    .header-badge {
+      font-size: 0.8rem;
+      background: rgba(255, 255, 255, 0.18);
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      backdrop-filter: blur(6px);
+    }
+
+    .site-footer {
+      margin-top: auto;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      font-size: 0.8rem;
+      background: #fff;
+      border-top: 1px solid #e1e3ec;
+      color: #666;
+    }
+
+    
+
+    .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 2rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(280px, 0.9fr);
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+   
+
+    .hero-card {
+      background: #fff;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .hero-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.04);
+    }
+
+    .restaurant-logo {
+      position: absolute;
+      left: 1.5rem;
+      bottom: -2.2rem;
+      width: 88px;
+      height: 88px;
+      border-radius: 1.25rem;
+      border: 4px solid #fff;
+      background: linear-gradient(135deg, #ff8000, #ffb347);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .restaurant-info {
+      padding: 2.5rem 1.75rem 1.5rem;
+    }
+
+    .restaurant-headline {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: flex-start;
+      margin-bottom: 0.6rem;
+    }
+
+    .restaurant-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .rating-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: #e9f9ef;
+      color: #1d7c3d;
+      font-size: 0.8rem;
+    }
+
+    .rating-stars {
+      color: #ffb703;
+      font-size: 0.85rem;
+    }
+
+    .restaurant-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.4rem 0 0.7rem;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .meta-pill {
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      background: #f0f2fa;
+    }
+
+    .restaurant-description {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    
+
+    .dish-nav {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding: 0.25rem 0 0.8rem;
+      margin-bottom: 0.8rem;
+      scrollbar-width: thin;
+    }
+
+    .dish-nav::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .dish-nav::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+      background: #d0d3e2;
+    }
+
+    .dish-nav button {
+      white-space: nowrap;
+      padding: 0.4rem 0.9rem;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #dde0ec;
+      font-size: 0.85rem;
+      transition: background 0.15s ease, transform 0.15s ease,
+        box-shadow 0.15s ease;
+    }
+
+    .dish-nav button:hover {
+      background: #fffbf5;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+
+    .dish-nav button.active {
+      background: #ff8000;
+      border-color: #ff8000;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(255, 128, 0, 0.35);
+    }
+
+   
+
+    .menu-section {
+      margin-bottom: 1.3rem;
+      scroll-margin-top: 96px;
+    }
+
+    .menu-section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .menu-section h2 {
+      font-size: 1.1rem;
+    }
+
+    .category-image {
+      width: 56px;
+      height: 56px;
+      border-radius: 0.9rem;
+      object-fit: cover;
+    }
+
+    .dish-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 0.4rem;
+    }
+
+    .dish-card {
+      background: #fff;
+      border-radius: 0.9rem;
+      padding: 0.7rem 0.75rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.5rem 0.75rem;
+      border: 1px solid #e1e3ec;
+      align-items: center;
+    }
+
+    .dish-text {
+      min-width: 0;
+    }
+
+    .dish-name {
+      font-size: 0.97rem;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .dish-description {
+      font-size: 0.8rem;
+      color: #666;
+      margin-bottom: 0.15rem;
+    }
+
+    .dish-meta {
+      font-size: 0.78rem;
+      color: #8a8fa2;
+    }
+
+    .dish-price {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .dish-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.35rem;
+    }
+
+    .add-button {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: #ff8000;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(255, 128, 0, 0.35);
+      flex-shrink: 0;
+    }
+
+    .add-button:active {
+      transform: scale(0.96);
+    }
+
+    .dish-tag {
+      font-size: 0.7rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 999px;
+      background: #f0f2fa;
+      color: #666;
+    }
+
+   
+
+    .cart-desktop {
+      background: #fff;
+      border-radius: 1.25rem;
+      padding: 1rem 1rem 0.9rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      border: 1px solid #e6e7f2;
+      position: sticky;
+      top: 6.5rem;
+      max-height: calc(100vh - 7.5rem);
+      display: flex;
+      flex-direction: column;
+      transition: opacity 0.18s ease, transform 0.18s ease;
+    }
+
+    .cart-desktop.cart-hidden {
+      opacity: 0;
+      transform: translateX(18px);
+      pointer-events: none;
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.4rem;
+    }
+
+    .cart-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .cart-count {
+      font-size: 0.8rem;
+      color: #777;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding-right: 0.2rem;
+      margin: 0.3rem 0 0.6rem;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 0.4rem 0.5rem;
+      padding: 0.45rem 0;
+      border-bottom: 1px solid #f1f2f9;
+      align-items: center;
+      font-size: 0.82rem;
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    .cart-qty-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      border-radius: 999px;
+      border: 1px solid #dde0ec;
+      padding: 0.1rem 0.4rem;
+    }
+
+    .qty-button {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #f4f5fb;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.82rem;
+    }
+
+    .cart-item-name {
+      font-weight: 500;
+    }
+
+    .cart-item-meta {
+      font-size: 0.7rem;
+      color: #888;
+    }
+
+    .cart-item-price {
+      text-align: right;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .remove-button {
+      background: transparent;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+
+    .cart-summary {
+      border-top: 1px dashed #dde0ec;
+      padding-top: 0.45rem;
+      margin-top: 0.2rem;
+      font-size: 0.82rem;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 0.2rem 0;
+    }
+
+    .summary-row.bold {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .cart-note {
+      font-size: 0.7rem;
+      color: #888;
+      margin-top: 0.25rem;
+    }
+
+    .order-button {
+      width: 100%;
+      margin-top: 0.6rem;
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      background: #1d7c3d;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 10px rgba(29, 124, 61, 0.35);
+    }
+
+    .order-button:disabled {
+      background: #d1d6e5;
+      box-shadow: none;
+      cursor: default;
+    }
+
+    .order-message {
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      color: #1d7c3d;
+    }
+
+    .cart-empty {
+      text-align: center;
+      padding: 0.7rem 0.4rem 0.8rem;
+      font-size: 0.82rem;
+      color: #888;
+    }
+
+   
+
+    .cart-toggle {
+      position: fixed;
+      bottom: 0.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0.65rem 1.2rem;
+      border-radius: 999px;
+      background: #1d7c3d;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.92rem;
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.25);
+      display: none;
+      z-index: 30;
+    }
+
+    .cart-toggle span {
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+
+    .cart-dialog-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 18, 35, 0.55);
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      z-index: 40;
+    }
+
+    .cart-dialog-backdrop.open {
+      display: flex;
+    }
+
+    .cart-dialog {
+      background: #fff;
+      width: 100%;
+      max-width: 480px;
+      max-height: 90vh;
+      border-radius: 1.5rem 1.5rem 0 0;
+      box-shadow: 0 -8px 25px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      padding: 0.8rem 1rem 1rem;
+    }
+
+    .cart-dialog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.4rem;
+    }
+
+    .cart-dialog-title {
+      font-weight: 600;
+    }
+
+    .cart-dialog-close {
+      background: transparent;
+      font-size: 1.2rem;
+      padding: 0.1rem;
+    }
+
+    .cart-dialog-items {
+      flex: 1;
+      overflow-y: auto;
+      margin: 0.3rem 0 0.6rem;
+    }
+
+    /* Media Queries */
+
+    @media (max-width: 768px) {
+      .layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .cart-desktop {
+        display: none;
+      }
+
+      .cart-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .restaurant-logo {
+        left: 1rem;
+        bottom: -2rem;
+        width: 76px;
+        height: 76px;
+      }
+
+      .restaurant-info {
+        padding: 2.25rem 1.1rem 1.3rem;
+      }
+
+      .hero-image-wrap {
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .content {
+        padding: 1.1rem 0.75rem 2.5rem;
+      }
+
+      .dish-card {
+        grid-template-columns: minmax(0, 1fr) auto;
+      }
+
+      .restaurant-name {
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .hero-image-wrap {
+        height: 180px;
+      }
+
+      .restaurant-logo {
+        width: 70px;
+        height: 70px;
+      }
+
+      .dish-card {
+        padding: 0.6rem 0.6rem;
+      }
+
+      .cart-toggle {
+        width: calc(100% - 1.5rem);
+        justify-content: space-between;
+      }
+    }
+</style>
 <body>
   <div class="page">
     <header class="site-header">
@@ -167,6 +816,478 @@
       </div>
     </div>
   </div>
+
+<script>
+
+ 
+   
+
+    const DELIVERY_COST = 2.9;
+    const MIN_ORDER_VALUE = 15;
+
+    const categories = [
+      {
+        id: "pizza",
+        name: "Steinofen Pizza",
+        image:
+          "https://images.pexels.com/photos/4109083/pexels-photo-4109083.jpeg",
+        dishes: [
+          {
+            id: "pizza-margherita",
+            name: "Pizza Margherita",
+            description: "Tomatensauce, Mozzarella, frisches Basilikum",
+            price: 8.5,
+            tag: "Vegetarisch",
+          },
+          {
+            id: "pizza-salami",
+            name: "Pizza Salami",
+            description: "Tomatensauce, Mozzarella, Rindersalami",
+            price: 9.9,
+            tag: "Klassiker",
+          },
+          {
+            id: "pizza-verde",
+            name: "Pizza Verde",
+            description: "Spinat, Ziegenkäse, rote Zwiebeln, Pesto",
+            price: 11.5,
+            tag: "Chef Empfehlung",
+          },
+        ],
+      },
+      {
+        id: "pasta",
+        name: "Frische Pasta",
+        image:
+          "https://images.pexels.com/photos/1437268/pexels-photo-1437268.jpeg",
+        dishes: [
+          {
+            id: "pasta-carbonara",
+            name: "Spaghetti Carbonara",
+            description: "Speck, Ei, Pecorino, Pfeffer",
+            price: 11.9,
+            tag: "Beliebt",
+          },
+          {
+            id: "pasta-pomodoro",
+            name: "Penne Pomodoro",
+            description: "Tomatensugo, Basilikum, Olivenöl",
+            price: 9.5,
+            tag: "Vegan möglich",
+          },
+          {
+            id: "pasta-ravioli",
+            name: "Ravioli Ricotta & Spinat",
+            description: "Salbeibutter, Pinienkerne, Parmesan",
+            price: 12.5,
+            tag: "Hausgemacht",
+          },
+        ],
+      },
+      {
+        id: "dessert",
+        name: "Dolci & Dessert",
+        image:
+          "https://images.pexels.com/photos/3026807/pexels-photo-3026807.jpeg",
+        dishes: [
+          {
+            id: "dessert-tiramisu",
+            name: "Tiramisu della Casa",
+            description: "Espresso, Mascarpone, Kakao",
+            price: 6.2,
+            tag: "Klassiker",
+          },
+          {
+            id: "dessert-panna-cotta",
+            name: "Panna Cotta",
+            description: "Vanille, Beerenragout",
+            price: 5.8,
+            tag: "Glutenfrei",
+          },
+          {
+            id: "dessert-gelato",
+            name: "Gelato Trio",
+            description: "3 Kugeln Eis nach Wahl",
+            price: 4.9,
+            tag: "Eis",
+          },
+        ],
+      },
+    ];
+
+    const cart = {};
+
+   
+
+    function formatPrice(amount) {
+      return amount.toFixed(2).replace(".", ",") + " €";
+    }
+
+    function getCartItems() {
+      return Object.values(cart);
+    }
+
+    function getDishById(id) {
+      for (const category of categories) {
+        const found = category.dishes.find((dish) => dish.id === id);
+        if (found) return found;
+      }
+      return null;
+    }
+
+
+
+    function dishCardTemplate(categoryId, dish) {
+      return `
+        <article class="dish-card" data-category="${categoryId}">
+          <div class="dish-text">
+            <h3 class="dish-name">${dish.name}</h3>
+            <p class="dish-description">${dish.description}</p>
+            <div class="dish-meta">
+              <span class="dish-tag">${dish.tag}</span>
+            </div>
+          </div>
+          <div class="dish-actions">
+            <div class="dish-price">${formatPrice(dish.price)}</div>
+            <button class="add-button" data-add="${dish.id}" aria-label="Gericht hinzufügen">
+              +
+            </button>
+          </div>
+        </article>
+      `;
+    }
+
+    function categorySectionTemplate(category) {
+      const dishesHtml = category.dishes
+        .map((dish) => dishCardTemplate(category.id, dish))
+        .join("");
+      return `
+        <section id="${category.id}" class="menu-section">
+          <div class="menu-section-header">
+            <img src="${category.image}" alt="${category.name}" class="category-image" />
+            <h2>${category.name}</h2>
+          </div>
+          <div class="dish-list">${dishesHtml}</div>
+        </section>
+      `;
+    }
+
+    function navButtonTemplate(category, isActive) {
+      const activeClass = isActive ? "active" : "";
+      return `
+        <button class="${activeClass}" data-nav="${category.id}">
+          ${category.name}
+        </button>
+      `;
+    }
+
+    function cartItemTemplate(item) {
+      const { dish, quantity } = item;
+      const lineTotal = dish.price * quantity;
+      return `
+        <div class="cart-item" data-item="${dish.id}">
+          <div class="cart-qty-box">
+            <button class="qty-button" data-action="dec" aria-label="Menge verringern">−</button>
+            <span>${quantity}</span>
+            <button class="qty-button" data-action="inc" aria-label="Menge erhöhen">+</button>
+          </div>
+          <div>
+            <div class="cart-item-name">${dish.name}</div>
+            <div class="cart-item-meta">
+              Einzelpreis: ${formatPrice(dish.price)}
+            </div>
+          </div>
+          <div class="cart-item-price">
+            <button class="remove-button" data-action="remove" aria-label="Entfernen">✕</button>
+            <div>${formatPrice(lineTotal)}</div>
+          </div>
+        </div>
+      `;
+    }
+
+    function cartItemsHtml() {
+      const items = getCartItems();
+      if (!items.length) {
+        return `
+          <div class="cart-empty">
+            Dein Warenkorb ist noch leer.<br />
+            Füge ein Gericht hinzu, um zu starten.
+          </div>
+        `;
+      }
+      return items.map((item) => cartItemTemplate(item)).join("");
+    }
+
+  
+
+    function renderMenu() {
+      const menuEl = document.getElementById("menu");
+      menuEl.innerHTML = categories
+        .map((category) => categorySectionTemplate(category))
+        .join("");
+    }
+
+    function renderNav() {
+      const navEl = document.getElementById("dish-nav");
+      navEl.innerHTML = categories
+        .map((c, index) => navButtonTemplate(c, index === 0))
+        .join("");
+    }
+
+    function getCartTotals() {
+      const items = getCartItems();
+      const subtotal = items.reduce(
+        (sum, item) => sum + item.dish.price * item.quantity,
+        0
+      );
+      const total = items.length ? subtotal + DELIVERY_COST : 0;
+      const count = items.reduce((sum, item) => sum + item.quantity, 0);
+      return { subtotal, total, count };
+    }
+
+    function renderDesktopCart() {
+      const itemsEl = document.getElementById("cart-items-desktop");
+      const countEl = document.getElementById("cart-count-desktop");
+      const subtotalEl = document.getElementById("cart-subtotal-desktop");
+      const deliveryEl = document.getElementById("cart-delivery-desktop");
+      const totalEl = document.getElementById("cart-total-desktop");
+      const orderBtn = document.getElementById("order-button-desktop");
+
+      itemsEl.innerHTML = cartItemsHtml();
+      const { subtotal, total, count } = getCartTotals();
+      countEl.textContent =
+        count === 1 ? "1 Artikel" : `${count} Artikel`;
+      subtotalEl.textContent = formatPrice(subtotal);
+      deliveryEl.textContent =
+        subtotal === 0 ? formatPrice(0) : formatPrice(DELIVERY_COST);
+      totalEl.textContent = formatPrice(total);
+      orderBtn.disabled = total < MIN_ORDER_VALUE;
+    }
+
+    function renderMobileCart() {
+      const itemsEl = document.getElementById("cart-items-mobile");
+      const subtotalEl = document.getElementById("cart-subtotal-mobile");
+      const deliveryEl = document.getElementById("cart-delivery-mobile");
+      const totalEl = document.getElementById("cart-total-mobile");
+      const orderBtn = document.getElementById("order-button-mobile");
+      const toggleInfo = document.getElementById("cart-toggle-info");
+
+      itemsEl.innerHTML = cartItemsHtml();
+      const { subtotal, total, count } = getCartTotals();
+      subtotalEl.textContent = formatPrice(subtotal);
+      deliveryEl.textContent =
+        subtotal === 0 ? formatPrice(0) : formatPrice(DELIVERY_COST);
+      totalEl.textContent = formatPrice(total);
+      orderBtn.disabled = total < MIN_ORDER_VALUE;
+
+      const labelCount = count || 0;
+      toggleInfo.textContent = `(${labelCount} · ${formatPrice(total)})`;
+    }
+
+    function renderCart() {
+      renderDesktopCart();
+      renderMobileCart();
+    }
+
+   
+
+    function addToCart(dishId) {
+      const dish = getDishById(dishId);
+      if (!dish) return;
+      if (!cart[dishId]) {
+        cart[dishId] = { dish, quantity: 1 };
+      } else {
+        cart[dishId].quantity += 1;
+      }
+      renderCart();
+    }
+
+    function changeQuantity(dishId, delta) {
+      const item = cart[dishId];
+      if (!item) return;
+      item.quantity += delta;
+      if (item.quantity <= 0) {
+        delete cart[dishId];
+      }
+      renderCart();
+    }
+
+    function removeFromCart(dishId) {
+      if (cart[dishId]) {
+        delete cart[dishId];
+      }
+      renderCart();
+    }
+
+    function clearCart() {
+      for (const key of Object.keys(cart)) {
+        delete cart[key];
+      }
+      renderCart();
+    }
+
+  
+
+    function handleCartVisibilityOnScroll() {
+      const cartEl = document.getElementById("cart-desktop");
+      if (!cartEl) return;
+
+      const scrollY = window.scrollY || window.pageYOffset;
+      const doc = document.documentElement;
+      const distanceToBottom =
+        doc.scrollHeight - doc.clientHeight - scrollY;
+
+      const isNearTop = scrollY < 80;
+      const isNearBottom = distanceToBottom < 120;
+
+      if (isNearTop || isNearBottom) {
+        cartEl.classList.add("cart-hidden");
+      } else {
+        cartEl.classList.remove("cart-hidden");
+      }
+    }
+
+  
+
+    function showOrderMessage(targetId) {
+      const messageEl = document.getElementById(targetId);
+      if (!messageEl) return;
+      messageEl.textContent =
+        "Danke! Deine Testbestellung wurde erfolgreich aufgenommen.";
+      setTimeout(() => {
+        messageEl.textContent = "";
+      }, 4000);
+    }
+
+    function handleOrder(isDesktop) {
+      const { total } = getCartTotals();
+      if (total < MIN_ORDER_VALUE) return;
+      clearCart();
+      const messageId = isDesktop
+        ? "order-message-desktop"
+        : "order-message-mobile";
+      showOrderMessage(messageId);
+    }
+
+  
+    function openCartDialog() {
+      const backdrop = document.getElementById("cart-dialog-backdrop");
+      backdrop.classList.add("open");
+      backdrop.setAttribute("aria-hidden", "false");
+    }
+
+    function closeCartDialog() {
+      const backdrop = document.getElementById("cart-dialog-backdrop");
+      backdrop.classList.remove("open");
+      backdrop.setAttribute("aria-hidden", "true");
+    }
+
+    function scrollToCategory(categoryId) {
+      const section = document.getElementById(categoryId);
+      if (!section) return;
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+
+    
+
+    function setupMenuEvents() {
+      const menuEl = document.getElementById("menu");
+      menuEl.addEventListener("click", (event) => {
+        const addBtn = event.target.closest("[data-add]");
+        if (!addBtn) return;
+        const dishId = addBtn.getAttribute("data-add");
+        addToCart(dishId);
+      });
+    }
+
+    function setupCartEvents() {
+      const desktopItemsEl =
+        document.getElementById("cart-items-desktop");
+      const mobileItemsEl =
+        document.getElementById("cart-items-mobile");
+
+      [desktopItemsEl, mobileItemsEl].forEach((container) => {
+        container.addEventListener("click", (event) => {
+          const itemEl = event.target.closest("[data-item]");
+          if (!itemEl) return;
+          const dishId = itemEl.getAttribute("data-item");
+          const action = event.target.getAttribute("data-action");
+
+          if (action === "inc") {
+            changeQuantity(dishId, 1);
+          } else if (action === "dec") {
+            changeQuantity(dishId, -1);
+          } else if (action === "remove") {
+            removeFromCart(dishId);
+          }
+        });
+      });
+
+      const orderDesktop =
+        document.getElementById("order-button-desktop");
+      const orderMobile =
+        document.getElementById("order-button-mobile");
+
+      orderDesktop.addEventListener("click", () =>
+        handleOrder(true)
+      );
+      orderMobile.addEventListener("click", () =>
+        handleOrder(false)
+      );
+    }
+
+    function setupNavEvents() {
+      const navEl = document.getElementById("dish-nav");
+      navEl.addEventListener("click", (event) => {
+        const btn = event.target.closest("[data-nav]");
+        if (!btn) return;
+        const id = btn.getAttribute("data-nav");
+        scrollToCategory(id);
+
+        navEl
+          .querySelectorAll("button")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+      });
+    }
+
+    function setupResponsiveCartEvents() {
+      const toggleBtn = document.getElementById("cart-toggle");
+      const backdrop = document.getElementById("cart-dialog-backdrop");
+      const closeBtn = document.getElementById("cart-dialog-close");
+
+      toggleBtn.addEventListener("click", openCartDialog);
+      closeBtn.addEventListener("click", closeCartDialog);
+
+      backdrop.addEventListener("click", (event) => {
+        if (event.target === backdrop) {
+          closeCartDialog();
+        }
+      });
+    }
+
+    function setupScrollEvents() {
+      handleCartVisibilityOnScroll();
+      window.addEventListener("scroll", handleCartVisibilityOnScroll);
+      window.addEventListener("resize", handleCartVisibilityOnScroll);
+    }
+
+    // ---------- Init ----------
+
+    function initApp() {
+      renderMenu();
+      renderNav();
+      renderCart();
+      setupMenuEvents();
+      setupCartEvents();
+      setupNavEvents();
+      setupResponsiveCartEvents();
+      setupScrollEvents();
+    }
+
+    document.addEventListener("DOMContentLoaded", initApp);
+ 
+</script>
 
 </body>
 </html>
