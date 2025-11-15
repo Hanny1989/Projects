@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lieferando Klon – Bestellseite</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="style.css">
+  <script src="MainScript.js" defer></script>
+  <link rel="icon" type="image/png" href="./Favicon/favicon-32x32.png" id="favicon-placeholder"/>
+
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="brand">
+          <div class="brand-logo">LF</div>
+          <span>LieferFix</span>
+        </div>
+        <div class="header-badge">
+          Heute bis <strong>23:00 Uhr</strong> lieferbar
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="layout">
+       
+        <section aria-label="Restaurant und Speisekarte">
+          <article class="hero-card">
+            <div class="hero-image-wrap">
+              <img
+                src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg"
+                alt="Frische italienische Speisen"
+              />
+              <div class="restaurant-logo">
+                <span>La<br />Trattoria</span>
+              </div>
+            </div>
+            <div class="restaurant-info">
+              <div class="restaurant-headline">
+                <div>
+                  <h1 class="restaurant-name">La Trattoria Verde</h1>
+                  <div class="restaurant-meta">
+                    <span class="meta-pill">Italienisch</span>
+                    <span class="meta-pill">Pizza · Pasta · Dessert</span>
+                  </div>
+                </div>
+                <div class="rating-pill">
+                  <span>4,8</span>
+                  <span class="rating-stars">★★★★★</span>
+                </div>
+              </div>
+              <p class="restaurant-description">
+                Hausgemachte Pasta, knusprige Steinofenpizza und frische
+                Antipasti, direkt zu dir nach Hause geliefert.
+              </p>
+              <div class="restaurant-meta" style="margin-top: 0.7rem">
+                <span class="meta-pill">Lieferzeit: 25–40 Min</span>
+                <span class="meta-pill">Lieferkosten: 2,90 €</span>
+                <span class="meta-pill">Mindestbestellwert: 15,00 €</span>
+              </div>
+            </div>
+          </article>
+
+       
+          <nav class="dish-nav" id="dish-nav" aria-label="Gerichtkategorien">
+          </nav>
+          <div id="menu">
+         
+          </div>
+        </section>
+
+        <aside class="cart-desktop" id="cart-desktop" aria-label="Warenkorb">
+          <div class="cart-header">
+            <h2 class="cart-title">Dein Warenkorb</h2>
+            <span class="cart-count" id="cart-count-desktop">0 Artikel</span>
+          </div>
+
+          <div class="cart-items" id="cart-items-desktop">
+            <div class="cart-empty">
+              Dein Warenkorb ist noch leer.<br />
+              Füge ein Gericht hinzu, um zu starten.
+            </div>
+          </div>
+
+          <div class="cart-summary">
+            <div class="summary-row">
+              <span>Zwischensumme</span>
+              <span id="cart-subtotal-desktop">0,00 €</span>
+            </div>
+            <div class="summary-row">
+              <span>Lieferkosten</span>
+              <span id="cart-delivery-desktop">2,90 €</span>
+            </div>
+            <div class="summary-row bold">
+              <span>Gesamt</span>
+              <span id="cart-total-desktop">0,00 €</span>
+            </div>
+            <p class="cart-note">
+              Mindestbestellwert: 15,00 € (inkl. Lieferkosten)
+            </p>
+          </div>
+
+          <button class="order-button" id="order-button-desktop" disabled>
+            Jetzt bestellen
+          </button>
+          <p class="order-message" id="order-message-desktop"></p>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      Demo-Bestellseite (Lieferando Klon) – nur zu Übungszwecken.
+    </footer>
+
+
+
+    <button class="cart-toggle" id="cart-toggle">
+      Warenkorb
+      <span id="cart-toggle-info">(0 · 0,00 €)</span>
+    </button>
+
+    <div
+      class="cart-dialog-backdrop"
+      id="cart-dialog-backdrop"
+      aria-hidden="true"
+    >
+      <div class="cart-dialog" role="dialog" aria-modal="true">
+        <div class="cart-dialog-header">
+          <h2 class="cart-dialog-title">Dein Warenkorb</h2>
+          <button
+            class="cart-dialog-close"
+            id="cart-dialog-close"
+            aria-label="Warenkorb schließen"
+          >
+            ✕
+          </button>
+        </div>
+
+        <div class="cart-dialog-items" id="cart-items-mobile">
+       
+        </div>
+
+        <div class="cart-summary">
+          <div class="summary-row">
+            <span>Zwischensumme</span>
+            <span id="cart-subtotal-mobile">0,00 €</span>
+          </div>
+          <div class="summary-row">
+            <span>Lieferkosten</span>
+            <span id="cart-delivery-mobile">2,90 €</span>
+          </div>
+          <div class="summary-row bold">
+            <span>Gesamt</span>
+            <span id="cart-total-mobile">0,00 €</span>
+          </div>
+          <p class="cart-note">
+            Mindestbestellwert: 15,00 € (inkl. Lieferkosten)
+          </p>
+        </div>
+
+        <button class="order-button" id="order-button-mobile" disabled>
+          Jetzt bestellen
+        </button>
+        <p class="order-message" id="order-message-mobile"></p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
